@@ -20,4 +20,16 @@ function clicks(){
   click++;
   document.getElementById("contadorClicks").innerText = click;
 }
- 
+
+function publicarTweet(){
+  var articulo = document.createElement("article");
+  var parrafo = document.createElement("p");
+  var parrafo2 = document.createElement("p");
+  parrafo.innerText = newTweet.value;
+  parrafo2.innerText = "De: " + autor.value;
+  articulo.appendChild(parrafo);
+  articulo.appendChild(parrafo2);
+  publicaciones.insertBefore(articulo, publicaciones.firstChild);
+  newTweet.value = "";
+  autor.value ="";
+ }
